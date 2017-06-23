@@ -7,6 +7,6 @@ import (
 
 // Connect - open connection to postgres
 func Connect() (*sql.DB, error) {
-	db, err := sql.Open("postgres", os.Getenv("PG_CONNECT_URL"))
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	return db, err
 }
