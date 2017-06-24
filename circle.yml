@@ -1,6 +1,8 @@
 dependencies:
   pre:
+    - ls -a
     - cd ui
+    - ls -a
     - npm i
     - ./node-modules/ng build
     - mv dist ../public
