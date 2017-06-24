@@ -6,10 +6,10 @@ dependencies:
   pre:
     - cd ui && npm i
     - cd ui && ./node_modules/.bin/ng build
-    - mkdir public
-    - mv -v ui/dist/* public
+    - mkdir static
+    - mv -v ui/dist/* static
     - ls -a
-    - cd public && ls -a
+    - cd static && ls -a
 
 deployment:
   staging:

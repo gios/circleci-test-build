@@ -11,6 +11,6 @@ import (
 func InitRoutes() *mux.Router {
 	router := mux.NewRouter()
 	router.PathPrefix("/products").Methods("GET").HandlerFunc(ctrl.ProductsController)
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 	return router
 }
