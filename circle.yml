@@ -1,7 +1,7 @@
 dependencies:
   pre:
     - cd ui && npm i
-    - cd ui && ./node-modules/ng build
+    - cd ui && ./node_modules/.bin/ng build
     - mv dist ../public
 
 deployment:
