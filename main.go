@@ -53,5 +53,6 @@ func main() {
 	port := os.Getenv("PORT")
 	r := router.InitRoutes()
 	http.Handle("/", r)
+	fmt.Println("Application running on port " + port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }

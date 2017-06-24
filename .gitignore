@@ -18,9 +18,3 @@ logs
 
 # Env
 .env
-
-# Static files
-public
-
-# UI Polymer
-ui/bower_components
