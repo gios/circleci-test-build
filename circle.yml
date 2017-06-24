@@ -1,7 +1,7 @@
 dependencies:
   pre:
     - ls -a
-    - cd /home/ubuntu/mom-and-i/ui
+    - cd models
     - ls -a
     - npm i
     - ./node-modules/ng build
