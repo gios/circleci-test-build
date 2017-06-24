@@ -1,3 +1,10 @@
+dependencies:
+  pre:
+    - cd ui
+    - npm i
+    - ./node-modules/ng build
+    - mv dist ../public
+
 deployment:
   staging:
     branch: master
