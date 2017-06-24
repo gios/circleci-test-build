@@ -6,8 +6,8 @@ dependencies:
   pre:
     - cd ui && npm i
     - cd ui && ./node_modules/.bin/ng build
-    - mkdir static
   post:
+    - mkdir static
     - mv -v ui/dist/* static
     - ls -a
     - cd static && ls -a
