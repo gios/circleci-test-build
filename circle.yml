@@ -8,6 +8,7 @@ dependencies:
     - cd ui && ./node_modules/.bin/ng build
     - mkdir public
     - mv -v ui/dist/* public
+    - ls -a
     - cd public && ls -a
 
 deployment:
