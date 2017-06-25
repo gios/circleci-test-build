@@ -7,9 +7,9 @@ dependencies:
     - cd ui && npm i
     - cd ui && ./node_modules/.bin/ng build
   post:
-    - mkdir static
-    - mv -v ui/dist/* static
-    - sudo cp -v * $CIRCLE_ARTIFACTS
+    - mkdir mom-and-i/static
+    - mv -v ui/dist/* mom-and-i/static
+    - sudo cp -v mom-and-i $CIRCLE_ARTIFACTS
 
 deployment:
   staging:
