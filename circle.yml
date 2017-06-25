@@ -8,12 +8,13 @@ dependencies:
     - cd ui && ./node_modules/.bin/ng build
   post:
     - mkdir static
-    - sudo mkdir $CIRCLE_ARTIFACTS/static
-    - mv -v ui/dist/* $CIRCLE_ARTIFACTS/static
+    - mv -v ui/dist/* static
     - sudo mv -v * $CIRCLE_ARTIFACTS
 
 deployment:
   staging:
     branch: master
+    commands:
+
     heroku:
       appname: mom-and-i
