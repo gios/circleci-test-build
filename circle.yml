@@ -9,9 +9,9 @@ dependencies:
   post:
     - mkdir static
     - mv -v ui/dist/* static
-    - ls -a
-    - cd static && ls -a
-    - mv . $CIRCLE_ARTIFACTS
+    - mkdir $CIRCLE_ARTIFACTS/static
+    - mv static/* $CIRCLE_ARTIFACTS/static
+    - mv -v . $CIRCLE_ARTIFACTS
 
 deployment:
   staging:
