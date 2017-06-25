@@ -9,13 +9,10 @@ dependencies:
   post:
     - mkdir static
     - mv -v ui/dist/* static
-    - sudo cp -v mom-and-i $CIRCLE_ARTIFACTS
+    - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i
 
 deployment:
   staging:
     branch: master
-    commands:
-      - mkdir static
-      - mv -v ui/dist/* static
     heroku:
       appname: mom-and-i
