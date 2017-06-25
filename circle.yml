@@ -9,7 +9,7 @@ dependencies:
   post:
     - mkdir static
     - mv -v ui/dist/* static
-    - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i
+    - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i --exclude=ui
 
 deployment:
   staging:
