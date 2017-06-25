@@ -8,10 +8,9 @@ dependencies:
     - cd ui && ./node_modules/.bin/ng build
   post:
     - mkdir static
-    - mv -v ui/dist/* static
     - sudo mkdir $CIRCLE_ARTIFACTS/static
-    - sudo mv static/* $CIRCLE_ARTIFACTS/static
-    - sudo mv -v . $CIRCLE_ARTIFACTS
+    - mv -v ui/dist/* $CIRCLE_ARTIFACTS/static
+    - sudo mv -v * $CIRCLE_ARTIFACTS
 
 deployment:
   staging:
