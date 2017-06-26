@@ -20,7 +20,7 @@ const (
 
 func init() {
 	initLogger()
-	// initEnvLoad()
+	initEnvLoad()
 }
 
 func initLogger() {
