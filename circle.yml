@@ -18,5 +18,5 @@ dependencies:
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: mom-and-i
+    commands:
+      - git push -f git@heroku.com:${CIRCLE_PROJECT_REPONAME}.git ${CIRCLE_BRANCH}:master
