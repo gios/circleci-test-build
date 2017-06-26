@@ -11,6 +11,8 @@ dependencies:
     - mv -v ui/dist/* static
     - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i --exclude=ui
   post:
+    - git config user.name $GIT_NAME
+    - git config user.email $GIT_EMAIL
     - git add -A
     - git commit -m "build"
 
