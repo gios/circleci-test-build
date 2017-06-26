@@ -9,8 +9,10 @@ dependencies:
   post:
     - mkdir static
     - mv -v ui/dist/* static
-    - git checkout -b heroku
     - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i --exclude=ui
+  post:
+    - git add -A
+    - git commit -m "build"
 
 deployment:
   staging:
