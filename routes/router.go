@@ -9,8 +9,14 @@ import (
 
 // InitRoutes - initialize routes for app
 func InitRoutes() *mux.Router {
-	router := mux.NewRouter()
-	router.PathPrefix("/products").Methods("GET").HandlerFunc(ctrl.ProductsController)
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-	return router
+	mainRouter := mux.NewRouter()
+	mainRouter.PathPrefix("/products").Methods("GET").HandlerFunc(ctrl.ProductsController)
+	initApiRoutes(mainRouter)
+	mainRouter.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
+	return mainRouter
+}
+
+func initApiRoutes(router *mux.Router) {
+	apiRouter := router.PathPrefix("/api").Subrouter()
+	apiRouter.HandleFunc("/version", ctrl.APIVersionController).Methods("GET")
 }

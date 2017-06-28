@@ -3,13 +3,13 @@ package models
 import (
 	"database/sql"
 
-	dbcon "github.com/gios/mom-and-i/shared/database"
+	dbConnector "github.com/gios/mom-and-i/shared/database"
 	log "github.com/sirupsen/logrus"
 )
 
 // GetProducts - gets all data about products
 func GetProducts() *sql.Rows {
-	db, err := dbcon.Connect()
+	db, err := dbConnector.Connect()
 	if err != nil {
 		log.Fatal(err)
 	}

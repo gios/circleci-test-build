@@ -8,6 +8,8 @@ dependencies:
     - cd ui && ./node_modules/.bin/ng build
   post:
     - mkdir static
+    - touch .env
+    - echo "API_VERSION = $CIRCLE_BUILD_NUM" > .env
     - mv -v ui/dist/* static
     - sudo rsync -av * $CIRCLE_ARTIFACTS --exclude=mom-and-i --exclude=ui
     - git config user.name $GIT_NAME
