@@ -16,9 +16,6 @@
 # Logger
 logs
 
-# Env
-.env
-
 #IDE
 .idea
 .vscode
